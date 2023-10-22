@@ -10,6 +10,7 @@ export default function Generator() {
   const [generatorVolumeBlur, setGeneratorVolumeBlur] = React.useState(10);
   const [generatorVolumeOutline, setGeneratorVolumeOtline] =
     React.useState(0.3);
+  const [selectedOption, setSelectedOption] = React.useState("row");
   const backgroundStyle = {
     background: `rgba(255, 255, 255, ${generatorVolumeTransparansy})`,
     borderRadius: "16px",
@@ -26,38 +27,56 @@ export default function Generator() {
             <h1 className={style.generator__title}>Glassmorphism</h1>
             <div style={backgroundStyle} className={style.glassmorf__box}></div>
           </div>
-
-          <div className={style.control__box}>
-            <InputFrame
-              className={style.form__angel}
-              value={generatorVolumeTransparansy}
-              set={setGeneratorVolumeTransparansy}
-              min={0}
-              max={1}
-              step={0.01}
-              rangeLabel="transparansy"
-              numberLabel="transparansy number"
-            ></InputFrame>
-            <InputFrame
-              className={style.form__angel}
-              value={generatorVolumeBlur}
-              set={setGeneratorVolumeBlur}
-              min={0}
-              max={40}
-              step={1}
-              rangeLabel="blur"
-              numberLabel="blur number"
-            ></InputFrame>
-            <InputFrame
-              className={style.form__angel}
-              value={generatorVolumeOutline}
-              set={setGeneratorVolumeOtline}
-              min={0}
-              max={1}
-              step={0.01}
-              rangeLabel="outline"
-              numberLabel="outline number"
-            ></InputFrame>
+          <div className={style.control__group}>
+            <div className={style.control__box}>
+              <InputFrame
+                className={style.form__angel}
+                value={generatorVolumeTransparansy}
+                set={setGeneratorVolumeTransparansy}
+                min={0}
+                max={1}
+                step={0.01}
+                rangeLabel="transparansy"
+                numberLabel="transparansy number"
+              ></InputFrame>
+              <InputFrame
+                className={style.form__angel}
+                value={generatorVolumeBlur}
+                set={setGeneratorVolumeBlur}
+                min={0}
+                max={40}
+                step={1}
+                rangeLabel="blur"
+                numberLabel="blur number"
+              ></InputFrame>
+              <InputFrame
+                className={style.form__angel}
+                value={generatorVolumeOutline}
+                set={setGeneratorVolumeOtline}
+                min={0}
+                max={1}
+                step={0.01}
+                rangeLabel="outline"
+                numberLabel="outline number"
+              ></InputFrame>
+            </div>
+            <div className={style.bg__control}>
+              <form className={style.form__direaction}>
+                <fieldset>
+                  <legend className={style.legend}>flex diraction</legend>
+                  <select
+                    className={style.select}
+                    value={selectedOption}
+                    onChange={(event) => {
+                      setSelectedOption(event.target.value);
+                    }}
+                  >
+                    <option value="div">div</option>
+                    <option value="product-card">product-card</option>
+                  </select>
+                </fieldset>
+              </form>
+            </div>
           </div>
           <ProductCard />
         </div>
