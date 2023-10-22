@@ -195,3 +195,32 @@
   color: var(--violet-11);
   cursor: default;
 }
+
+.code__box{
+  padding: 25px;
+  border-radius: 10px;
+  background-color: hsl(337, 100%, 89%, .5);
+}
+
+.code{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.code span{
+  font-size: 25px;
+}
+
+.code span:nth-child(1){
+  color: #fca311;
+}
+.code span:nth-child(2){
+  color: #14213d;
+}
+.code span:nth-child(3){
+  color: #e63946;
+}

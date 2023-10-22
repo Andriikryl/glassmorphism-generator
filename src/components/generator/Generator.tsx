@@ -1,11 +1,5 @@
 "use client";
 import React from "react";
-import * as Select from "@radix-ui/react-select";
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@radix-ui/react-icons";
 import { Container } from "../container/Container";
 import style from "./style.module.css";
 import { InputFrame } from "../inputFrame/InputFrame";
@@ -119,6 +113,13 @@ export default function Generator() {
                 </fieldset>
               </form>
             </div>
+          </div>
+          <div className={style.code__box}>
+            <code className={style.code}>
+              <span>background-color: {backgroundStyle.background};</span>
+              <span>backdrop-filter: {backgroundStyle.backdropFilter};</span>
+              <span>border: {backgroundStyle.border}</span>
+            </code>
           </div>
         </div>
       </Container>
