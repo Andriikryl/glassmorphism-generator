@@ -1,7 +1,9 @@
+import Generator from "@/components/generator/Generator";
+
 export default function Home() {
   return (
     <>
-      <div>asd</div>
+      <Generator />
     </>
   );
 }

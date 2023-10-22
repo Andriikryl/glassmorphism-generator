@@ -1,0 +1,54 @@
+.generator{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    height: 100dvh;
+    padding-block: 100px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.generator__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner__box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.generator__title{
+    font-size: clamp(20px, 5vw + 1rem, 60px);
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.glassmorf__box{
+    margin-block-start: -100px;
+    width: 500px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.1px);
+    -webkit-backdrop-filter: blur(10.1px);
+    border: 1px solid rgba(255, 255, 255, 0.32)
+}
