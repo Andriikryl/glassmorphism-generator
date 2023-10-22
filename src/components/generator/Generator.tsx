@@ -6,6 +6,8 @@ import { InputFrame } from "../inputFrame/InputFrame";
 import ProductCard from "../productCard/ProductCard";
 import DivContent from "../divContent/DivContent";
 import clsx from "clsx";
+import AboutCard from "../aboutCard/AboutCard";
+import ProjectCard from "../projectCard/ProjectCard";
 
 export default function Generator() {
   const [generatorVolumeTransparansy, setGeneratorVolumeTransparansy] =
@@ -43,6 +45,12 @@ export default function Generator() {
             )}
             {selectedOption === "product-card" && (
               <ProductCard backgroundStyle={backgroundStyle} />
+            )}
+            {selectedOption === "about-card" && (
+              <AboutCard backgroundStyle={backgroundStyle} />
+            )}
+            {selectedOption === "project-card" && (
+              <ProjectCard backgroundStyle={backgroundStyle} />
             )}
           </div>
           <div className={style.control__group}>
@@ -109,6 +117,8 @@ export default function Generator() {
                   >
                     <option value="div">div</option>
                     <option value="product-card">product-card</option>
+                    <option value="about-card">about-card</option>
+                    <option value="project-card">project-card</option>
                   </select>
                 </fieldset>
               </form>
