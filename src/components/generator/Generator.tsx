@@ -3,6 +3,7 @@ import React from "react";
 import { Container } from "../container/Container";
 import style from "./style.module.css";
 import { InputFrame } from "../inputFrame/InputFrame";
+import ProductCard from "../productCard/ProductCard";
 export default function Generator() {
   const [generatorVolumeTransparansy, setGeneratorVolumeTransparansy] =
     React.useState(0);
@@ -58,6 +59,7 @@ export default function Generator() {
               numberLabel="outline number"
             ></InputFrame>
           </div>
+          <ProductCard />
         </div>
       </Container>
     </section>
