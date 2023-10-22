@@ -8,6 +8,7 @@ import DivContent from "../divContent/DivContent";
 import clsx from "clsx";
 import AboutCard from "../aboutCard/AboutCard";
 import ProjectCard from "../projectCard/ProjectCard";
+import WorkWeb from "../WorkWeb/WorkWeb";
 
 export default function Generator() {
   const [generatorVolumeTransparansy, setGeneratorVolumeTransparansy] =
@@ -15,9 +16,9 @@ export default function Generator() {
   const [generatorVolumeBlur, setGeneratorVolumeBlur] = React.useState(10);
   const [generatorVolumeOutline, setGeneratorVolumeOtline] =
     React.useState(0.3);
-  const [selectedOption, setSelectedOption] = React.useState("div");
+  const [selectedOption, setSelectedOption] = React.useState("work-web");
   const [selectedOptionBackground, setSelectedOptionBackground] =
-    React.useState("gradient");
+    React.useState("Image");
   const backgroundStyle = {
     background: `rgba(255, 255, 255, ${generatorVolumeTransparansy})`,
     borderRadius: "16px",
@@ -51,6 +52,9 @@ export default function Generator() {
             )}
             {selectedOption === "project-card" && (
               <ProjectCard backgroundStyle={backgroundStyle} />
+            )}
+            {selectedOption === "work-web" && (
+              <WorkWeb backgroundStyle={backgroundStyle} />
             )}
           </div>
           <div className={style.control__group}>
@@ -119,6 +123,7 @@ export default function Generator() {
                     <option value="product-card">product-card</option>
                     <option value="about-card">about-card</option>
                     <option value="project-card">project-card</option>
+                    <option value="work-web">work-web</option>
                   </select>
                 </fieldset>
               </form>
