@@ -21,7 +21,9 @@
 
 .generator__content{
     display: flex;
+    gap:20px;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -45,4 +47,10 @@
     margin-block-start: -100px;
     width: 500px;
     height: 200px;
+}
+
+.control__box{
+    padding: 20px;
+    background-color: hsl(221, 51%, 16%, .5);
+    border-radius: 10px;
 }
