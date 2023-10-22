@@ -7,13 +7,15 @@ export default function Generator() {
   const [generatorVolumeTransparansy, setGeneratorVolumeTransparansy] =
     React.useState(0);
   const [generatorVolumeBlur, setGeneratorVolumeBlur] = React.useState(10);
+  const [generatorVolumeOutline, setGeneratorVolumeOtline] =
+    React.useState(0.3);
   const backgroundStyle = {
     background: `rgba(255, 255, 255, ${generatorVolumeTransparansy})`,
     borderRadius: "16px",
     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
     backdropFilter: `blur(${generatorVolumeBlur}px)`,
     WebkitBackdropFilter: `blur(${generatorVolumeBlur}px)`,
-    border: "1px solid rgba(255, 255, 255, 0.32)",
+    border: `1px solid rgba(255, 255, 255, ${generatorVolumeOutline})`,
   };
   return (
     <section className={style.generator}>
@@ -44,6 +46,16 @@ export default function Generator() {
               step={1}
               rangeLabel="blur"
               numberLabel="blur number"
+            ></InputFrame>
+            <InputFrame
+              className={style.form__angel}
+              value={generatorVolumeOutline}
+              set={setGeneratorVolumeOtline}
+              min={0}
+              max={1}
+              step={0.01}
+              rangeLabel="outline"
+              numberLabel="outline number"
             ></InputFrame>
           </div>
         </div>
