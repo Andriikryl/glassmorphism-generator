@@ -4,9 +4,20 @@ import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import productImage from "public/productCard/image-product-desktop.jpg";
 import Image from "next/image";
 
-export default function ProductCard() {
+interface ProductCardProps {
+  backgroundStyle: {
+    background: string;
+    borderRadius: string;
+    boxShadow: string;
+    backdropFilter: string;
+    WebkitBackdropFilter: string;
+    border: string;
+  };
+}
+
+export default function ProductCard({ backgroundStyle }: ProductCardProps) {
   return (
-    <article className={style.product}>
+    <article className={style.product} style={backgroundStyle}>
       <Image src={productImage} width={300} height={500} alt="product image" />
       <div className={style.product__contant}>
         <p className={style.product__category}>Perfume</p>
