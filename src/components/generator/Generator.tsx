@@ -4,13 +4,15 @@ import { Container } from "../container/Container";
 import style from "./style.module.css";
 import { InputFrame } from "../inputFrame/InputFrame";
 export default function Generator() {
-  const [generatorVolumeHue, setGeneratorVolumeHue] = React.useState(0);
+  const [generatorVolumeTransparansy, setGeneratorVolumeTransparansy] =
+    React.useState(0);
+  const [generatorVolumeBlur, setGeneratorVolumeBlur] = React.useState(10);
   const backgroundStyle = {
-    background: `rgba(255, 255, 255, ${generatorVolumeHue})`,
+    background: `rgba(255, 255, 255, ${generatorVolumeTransparansy})`,
     borderRadius: "16px",
     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-    backdropFilter: "blur(10.1px)",
-    WebkitBackdropFilter: "blur(10.1px)",
+    backdropFilter: `blur(${generatorVolumeBlur}px)`,
+    WebkitBackdropFilter: `blur(${generatorVolumeBlur}px)`,
     border: "1px solid rgba(255, 255, 255, 0.32)",
   };
   return (
@@ -25,13 +27,23 @@ export default function Generator() {
           <div className={style.control__box}>
             <InputFrame
               className={style.form__angel}
-              value={generatorVolumeHue}
-              set={setGeneratorVolumeHue}
+              value={generatorVolumeTransparansy}
+              set={setGeneratorVolumeTransparansy}
               min={0}
               max={1}
               step={0.01}
               rangeLabel="transparansy"
               numberLabel="transparansy number"
+            ></InputFrame>
+            <InputFrame
+              className={style.form__angel}
+              value={generatorVolumeBlur}
+              set={setGeneratorVolumeBlur}
+              min={0}
+              max={40}
+              step={1}
+              rangeLabel="blur"
+              numberLabel="blur number"
             ></InputFrame>
           </div>
         </div>
